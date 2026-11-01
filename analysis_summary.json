@@ -1,0 +1,165 @@
+{
+  "inspection": {
+    "source_file": "OnlineRetail.xlsx",
+    "sheet": "Online Retail",
+    "rows": 541909,
+    "columns": 8,
+    "column_names": [
+      "InvoiceNo",
+      "StockCode",
+      "Description",
+      "Quantity",
+      "InvoiceDate",
+      "UnitPrice",
+      "CustomerID",
+      "Country"
+    ],
+    "missing_values": {
+      "InvoiceNo": 0,
+      "StockCode": 0,
+      "Description": 1454,
+      "Quantity": 0,
+      "InvoiceDate": 0,
+      "UnitPrice": 0,
+      "CustomerID": 135080,
+      "Country": 0
+    },
+    "duplicate_rows": 5268,
+    "dtypes": {
+      "InvoiceNo": "object",
+      "StockCode": "object",
+      "Description": "object",
+      "Quantity": "int64",
+      "InvoiceDate": "datetime64[us]",
+      "UnitPrice": "float64",
+      "CustomerID": "float64",
+      "Country": "str"
+    },
+    "date_min": "2010-12-01 08:26:00",
+    "date_max": "2011-12-09 12:50:00",
+    "unique_customer_ids_before_cleaning": 4372,
+    "head": [
+      {
+        "InvoiceNo": 536365,
+        "StockCode": "85123A",
+        "Description": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "Quantity": 6,
+        "InvoiceDate": "2010-12-01 08:26:00",
+        "UnitPrice": 2.55,
+        "CustomerID": 17850.0,
+        "Country": "United Kingdom"
+      },
+      {
+        "InvoiceNo": 536365,
+        "StockCode": 71053,
+        "Description": "WHITE METAL LANTERN",
+        "Quantity": 6,
+        "InvoiceDate": "2010-12-01 08:26:00",
+        "UnitPrice": 3.39,
+        "CustomerID": 17850.0,
+        "Country": "United Kingdom"
+      },
+      {
+        "InvoiceNo": 536365,
+        "StockCode": "84406B",
+        "Description": "CREAM CUPID HEARTS COAT HANGER",
+        "Quantity": 8,
+        "InvoiceDate": "2010-12-01 08:26:00",
+        "UnitPrice": 2.75,
+        "CustomerID": 17850.0,
+        "Country": "United Kingdom"
+      },
+      {
+        "InvoiceNo": 536365,
+        "StockCode": "84029G",
+        "Description": "KNITTED UNION FLAG HOT WATER BOTTLE",
+        "Quantity": 6,
+        "InvoiceDate": "2010-12-01 08:26:00",
+        "UnitPrice": 3.39,
+        "CustomerID": 17850.0,
+        "Country": "United Kingdom"
+      },
+      {
+        "InvoiceNo": 536365,
+        "StockCode": "84029E",
+        "Description": "RED WOOLLY HOTTIE WHITE HEART.",
+        "Quantity": 6,
+        "InvoiceDate": "2010-12-01 08:26:00",
+        "UnitPrice": 3.39,
+        "CustomerID": 17850.0,
+        "Country": "United Kingdom"
+      }
+    ]
+  },
+  "cleaning_counts": {
+    "input_rows": 541909,
+    "duplicates_removed": 5268,
+    "after_deduplication": 536641,
+    "missing_customer_id_rows_removed": 135037,
+    "after_customer_id_filter": 401604,
+    "invalid_dates_removed": 0,
+    "cancelled_invoice_rows_removed": 8872,
+    "after_cancelled_filter": 392732,
+    "nonpositive_quantity_or_price_rows_removed": 40,
+    "after_valid_purchase_filter": 392692,
+    "cleaned_rows": 392692,
+    "unique_customers": 4338,
+    "cleaned_date_min": "2010-12-01 08:26:00",
+    "cleaned_date_max": "2011-12-09 12:50:00"
+  },
+  "reference_date": "2011-12-10",
+  "rfm_customers": 4338,
+  "cluster_count": 2,
+  "cluster_selection": "highest silhouette score on deterministic sample among k=2..8; elbow chart also included",
+  "silhouette_sample_n": 4338,
+  "elbow": {
+    "2": 6476.506937053553,
+    "3": 4858.244056477251,
+    "4": 3925.425551328217,
+    "5": 3269.2747004959374,
+    "6": 2841.417066960524,
+    "7": 2532.984679245518,
+    "8": 2325.0753739552906
+  },
+  "silhouette": {
+    "2": 0.43250906819167395,
+    "3": 0.3362880577766161,
+    "4": 0.33290207168555713,
+    "5": 0.318077977437895,
+    "6": 0.31287256087321236,
+    "7": 0.31029597420449523,
+    "8": 0.302062319419304
+  },
+  "profiles": [
+    {
+      "Cluster": 0,
+      "Customers": 1668,
+      "Avg_Recency": 26.450239808153476,
+      "Median_Recency": 17.0,
+      "Avg_Frequency": 8.439448441247002,
+      "Median_Frequency": 6.0,
+      "Avg_Monetary": 4535.738489808154,
+      "Median_Monetary": 2058.17,
+      "Revenue": 7565611.801,
+      "Revenue_Share": 0.8512922213528428,
+      "Segment": "Champions"
+    },
+    {
+      "Cluster": 1,
+      "Customers": 2670,
+      "Avg_Recency": 134.67153558052433,
+      "Median_Recency": 96.0,
+      "Avg_Frequency": 1.6685393258426966,
+      "Median_Frequency": 1.0,
+      "Avg_Monetary": 494.9801846441948,
+      "Median_Monetary": 362.01,
+      "Revenue": 1321597.093,
+      "Revenue_Share": 0.14870777864715737,
+      "Segment": "Lost / Low-Engagement Customers"
+    }
+  ],
+  "cluster_labels": {
+    "0": "Champions",
+    "1": "Lost / Low-Engagement Customers"
+  }
+}
